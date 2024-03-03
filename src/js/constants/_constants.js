@@ -7,57 +7,61 @@ function $All(selector) {
     return document.querySelectorAll(`${selector}`);
 }
 
-const LOADER                = $(".loader");
+const LOADER = $(".loader");
 
-const AUDIO_PLAYER          = $("#audio-player");
+const AUDIO_PLAYER = $("#audio-player");
 
-const DECOR_ELEMENTS        = $All(".tetris__decor");
+const DECOR_ELEMENTS = $All(".tetris__decor");
 
-const HEADER_TITLE          = $(".header__title");
-const headerTitleText       = "TETRIS";
+const HEADER_TITLE = $(".header__title");
+const headerTitleText = "TETRIS";
 
-const PAUSE_TITLE           = $(".display__pause-title");
-const GAME_OVER_TITLE       =$(".display__game-over-title");
+const PAUSE_TITLE = $(".display__pause-title");
+const GAME_OVER_TITLE = $(".display__game-over-title");
 
-const GAME_STYLES_BTNS      = $All(".game-styles__block");
-const COLOR_PICKER          = $("#color-picker");
-const INFO_WINDOW_BTN       = $(".info-window__btn");
+const GAME_STYLES_BTNS = $All(".game-styles__block");
+const COLOR_PICKER = $("#color-picker");
 
-const PLAY_FIELD            = $(".play-field");
+const PLAY_FIELD = $(".play-field");
 
-const SOUND_ROTATE_SRC      = "./../../sounds/mr_9999_01.wav";
-const SOUND_MOVE_SRC        = "./../../sounds/mr_9999_05.wav";
-const SOUND_DROP_SRC        = "./../../sounds/mr_9999_11.wav";
+const SOUND_ROTATE_SRC = "./../../sounds/mr_9999_01.wav";
+const SOUND_MOVE_SRC = "./../../sounds/mr_9999_05.wav";
+const SOUND_DROP_SRC = "./../../sounds/mr_9999_11.wav";
 
-const MAXIMUM_POINTS        = $("#maximum-points");
-const CLEARED_LINES         = $("#cleared-lines");
-const LEVEL                 = $("#level");
-const NEXT_TETROMINO_FIELD  = $("#next-tetromino");
-const ICON_SOUND            = $("#icon-without-sound");
-const ICON_PAUSE            = $("#icon-pause");
-const GAME_TIME             = $("#game-time");
+const MAXIMUM_POINTS = $("#maximum-points");
+const CLEARED_LINES = $("#cleared-lines");
+const LEVEL = $("#level");
+const NEXT_TETROMINO_FIELD = $("#next-tetromino");
+const ICON_SOUND = $("#icon-without-sound");
+const ICON_PAUSE = $("#icon-pause");
+const GAME_TIME = $("#game-time");
 
-const RESTART_BTN           = $(".btn-restart");
-const PAUSE_BTN             = $(".btn-pause");
-const ROTATE_BTN            = $(".btn-rotate");
-const DOWN_BTN              = $(".btn-down");
-const LEFT_BTN              = $(".btn-left");
-const RIGHT_BTN             = $(".btn-right");
+const RESTART_BTN = $(".btn-restart");
+const PAUSE_BTN = $(".btn-pause");
+const ROTATE_BTN = $(".btn-rotate");
+const DOWN_BTN = $(".btn-down");
+const LEFT_BTN = $(".btn-left");
+const RIGHT_BTN = $(".btn-right");
 
-const INFO_WINDOW           = $(".info-window");
-const INFO_WINDOW_ARROW     = $(".info-window__arrow")
+const INFO_WINDOW = $(".info-window");
+const INFO_WINDOW_HEADER = $(".info-window__header");
+const INFO_WINDOW_BTN = $(".info-window__btn");
+const INFO_WINDOW_TABS = $All(".info-window__tab");
+const ACHIEVEMENT = $(".achievement");
+const CONTROL = $(".control");
+const CHANGELOG = $(".changelog");
+
+const ANDROID_PAUSE_BTN = $(".android-controls__pause");
+const ANDROID_RESTART_BTN = $(".android-controls__restart");
+const ANDROID_DROP_BTN = $(".android-controls__drop");
+const ANDROID_ROTATE_BTN = $(".android-controls__rotate");
+const ANDROID_LEFT_BTN = $(".android-controls__left");
+const ANDROID_RIGHT_BTN = $(".android-controls__right");
+const ANDROID_DOWN_BTN = $(".android-controls__down");
 
 const PLAYFIELD_COLUMNS = 10;
 const PLAYFIELD_ROWS = 20;
-const TETROMINO_NAMES = [
-    "O",
-    "L",
-    "J",
-    "I",
-    "T",
-    "Z",
-    "S"
-];
+const TETROMINO_NAMES = ["O", "L", "J", "I", "T", "Z", "S"];
 const TETROMINOES = {
     O: [
         [
@@ -223,32 +227,31 @@ const COLOR_PALETTES = {
 };
 const TETRIS_STYLES = ["classic", "chopped", "bubble", "lego", "panel", "puzzle", "skull"];
 
-
-export { 
-    $, 
+export {
+    $,
     LOADER,
     DECOR_ELEMENTS,
     HEADER_TITLE,
     headerTitleText,
-    GAME_STYLES_BTNS, 
-    PLAYFIELD_COLUMNS, 
-    PLAYFIELD_ROWS, 
-    TETROMINO_NAMES, 
-    TETROMINOES, 
-    COLOR_PALETTES, 
-    TETRIS_STYLES, 
-    COLOR_PICKER, 
-    INFO_WINDOW_BTN, 
-    SOUND_ROTATE_SRC, 
-    SOUND_MOVE_SRC, 
-    SOUND_DROP_SRC, 
+    GAME_STYLES_BTNS,
+    PLAYFIELD_COLUMNS,
+    PLAYFIELD_ROWS,
+    TETROMINO_NAMES,
+    TETROMINOES,
+    COLOR_PALETTES,
+    TETRIS_STYLES,
+    COLOR_PICKER,
+    INFO_WINDOW_BTN,
+    SOUND_ROTATE_SRC,
+    SOUND_MOVE_SRC,
+    SOUND_DROP_SRC,
     PLAY_FIELD,
-    MAXIMUM_POINTS, 
-    CLEARED_LINES, 
-    LEVEL, 
-    NEXT_TETROMINO_FIELD, 
-    GAME_TIME, 
-    ICON_SOUND, 
+    MAXIMUM_POINTS,
+    CLEARED_LINES,
+    LEVEL,
+    NEXT_TETROMINO_FIELD,
+    GAME_TIME,
+    ICON_SOUND,
     ICON_PAUSE,
     RESTART_BTN,
     PAUSE_BTN,
@@ -257,8 +260,19 @@ export {
     LEFT_BTN,
     RIGHT_BTN,
     INFO_WINDOW,
-    INFO_WINDOW_ARROW,
+    INFO_WINDOW_HEADER,
     PAUSE_TITLE,
     GAME_OVER_TITLE,
     AUDIO_PLAYER,
+    INFO_WINDOW_TABS,
+    ACHIEVEMENT,
+    CONTROL,
+    CHANGELOG,
+    ANDROID_PAUSE_BTN,
+    ANDROID_RESTART_BTN,
+    ANDROID_DROP_BTN,
+    ANDROID_ROTATE_BTN,
+    ANDROID_LEFT_BTN,
+    ANDROID_RIGHT_BTN,
+    ANDROID_DOWN_BTN,
 };

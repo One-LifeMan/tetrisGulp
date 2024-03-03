@@ -4,20 +4,29 @@
         display: grid;
     }
 
-    
+    .android-controls {
+        display: none;
+    }
 }
 
 @media only screen and (width < 640px) {
-    .tetris__left-gamepad {
+    .tetris__left-gamepad,
+    .tetris__right-gamepad {
         /* transform: translate(-58%, 0); */
         display: none;
         
     }
     
-    .tetris__right-gamepad {
-        /* transform: translate(58%, 0) scaleX(-1); */
-        display: none;
-        
+    .info-window {
+        position: relative;
+        top:auto;
+        right: auto;
+        width: 80%;
+        margin: 20px auto 0;
+    }
+
+    .tetris {
+        padding-bottom: 26vh;
     }
     
 }

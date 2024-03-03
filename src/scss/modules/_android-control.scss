@@ -1,0 +1,105 @@
+.android-controls {
+    position: absolute;
+    bottom: 10vh;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+
+    &__block {
+        position: absolute;
+        right: 50%;
+        left: 0;
+        display: flex;
+        width: 50%;
+        height: inherit;
+        padding: 4px;
+        color: #fff;
+
+        & + .android-controls__block {
+            right: 0;
+            left: 50%;
+            width: 50%;
+        }
+
+        & > div {
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+    }
+
+    &__pause {
+        top: 50%;
+        left: 10%;
+        transform: translate(0, -50%);
+    }
+
+    &__restart {
+        top: 50%;
+        right: 10%;
+        transform: translate(0, -50%);
+    }
+
+    &__drop {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    &__rotate {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    &__left {
+        top: 50%;
+        left: 10%;
+        transform: translate(0, -50%);
+    }
+
+    &__right {
+        top: 50%;
+        right: 10%;
+        transform: translate(0, -50%);
+    }
+
+    &__down {
+        bottom: 0;
+
+       /*  top: 50%; */
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+.android-controls__pause,
+.android-controls__restart,
+.android-controls__drop,
+.android-controls__rotate,
+.android-controls__left,
+.android-controls__right,
+.android-controls__down {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6vh;
+    height: 6vh;
+    color: #000;background: rgb(176 176 176);
+    background: radial-gradient(circle, rgb(176 176 176 / 100%) 0%, rgb(226 226 226 / 100%) 100%);
+    box-shadow: 0 2px 1px 1px rgb(0 0 0 / 20%), inset 0 1px 1px 1px #fff;
+
+    &:active {
+        color: $main-bg;
+        background-color: #b0b0b0;
+        border: #202020;
+        box-shadow: none;
+
+        .material-icons {
+            margin-top: 1px;
+        }
+    }
+}
+
+.material-icons {
+}

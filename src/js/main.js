@@ -3,6 +3,7 @@
 import "./modules/_body-height.js";
 import "./modules/_loader.js";
 import "./modules/_i18n.js";
+import "./modules/_info-window.js";
 
 // prettier-ignore
 import { 
@@ -36,15 +37,18 @@ import {
     PLAY_FIELD,
     NEXT_TETROMINO_FIELD,
     INFO_WINDOW,
-    INFO_WINDOW_ARROW,
     PAUSE_TITLE,
     GAME_OVER_TITLE,
+    ANDROID_PAUSE_BTN,
+    ANDROID_RESTART_BTN,
+    ANDROID_DROP_BTN,
+    ANDROID_ROTATE_BTN,
+    ANDROID_LEFT_BTN,
+    ANDROID_RIGHT_BTN,
+    ANDROID_DOWN_BTN,
 } from "./constants/_constants.js";
 
-import "./modules/_tetromine-rain.js";
-
-let tetrisColor =
-    localStorage.getItem("tetrisColor") || "#454545"; /* gameSettings */
+let tetrisColor = localStorage.getItem("tetrisColor") || "#454545"; /* gameSettings */
 
 const check = {
     isSupportsWebP() {
@@ -67,9 +71,7 @@ const check = {
         if (gameSettings.tetromino.row >= 0) {
             return (
                 gameSettings.tetromino.matrix[row][column] &&
-                gameSettings.playfield[gameSettings.tetromino.row + row][
-                    gameSettings.tetromino.column + column
-                ]
+                gameSettings.playfield[gameSettings.tetromino.row + row][gameSettings.tetromino.column + column]
             );
         }
     },
@@ -89,14 +91,13 @@ const check = {
     },
     canRotateTetromino() {
         return (
-            gameSettings.tetromino.column +
-                gameSettings.tetromino.matrix.length <=
-                PLAYFIELD_COLUMNS && gameSettings.tetromino.column !== -1
+            gameSettings.tetromino.column + gameSettings.tetromino.matrix.length <= PLAYFIELD_COLUMNS &&
+            gameSettings.tetromino.column !== -1
         );
     },
     isLevelUp() {
         let points = currentGame.maximumPoints;
-        let pointsToNextLvl = currentGame.pointsToNextLevel;
+        let pointsToNextLvl = pointsScore.pointsToNextLevel;
         return points >= pointsToNextLvl;
     },
 };
@@ -158,24 +159,17 @@ const gameSettings = {
 const generate = {
     colorForTetromino() {
         return COLOR_PALETTES[gameSettings.styleGame][
-            Math.floor(
-                Math.random() * COLOR_PALETTES[gameSettings.styleGame].length,
-            )
+            Math.floor(Math.random() * COLOR_PALETTES[gameSettings.styleGame].length)
         ];
     },
     playField() {
         for (let i = 0; i < PLAYFIELD_ROWS * PLAYFIELD_COLUMNS; i++) {
             const cell = document.createElement("div");
-            cell.classList.add(
-                "play-field__cell",
-                `${gameSettings.styleGame}-bg`,
-            );
+            cell.classList.add("play-field__cell", `${gameSettings.styleGame}-bg`);
             PLAY_FIELD.append(cell);
         }
 
-        gameSettings.playfield = new Array(PLAYFIELD_ROWS)
-            .fill()
-            .map(() => new Array(PLAYFIELD_COLUMNS).fill(0));
+        gameSettings.playfield = new Array(PLAYFIELD_ROWS).fill().map(() => new Array(PLAYFIELD_COLUMNS).fill(0));
     },
     nextTetrominoField() {
         const rows = gameSettings.nextTetromino.field.rows;
@@ -183,26 +177,18 @@ const generate = {
 
         for (let i = 0; i < rows * columns; i++) {
             const cell = document.createElement("div");
-            cell.classList.add(
-                "next-tetromino__cell",
-                `${gameSettings.styleGame}-bg`,
-            );
+            cell.classList.add("next-tetromino__cell", `${gameSettings.styleGame}-bg`);
             NEXT_TETROMINO_FIELD.append(cell);
         }
 
-        gameSettings.nextTetromino.field.matrix = new Array(rows)
-            .fill()
-            .map(() => new Array(columns).fill(0));
+        gameSettings.nextTetromino.field.matrix = new Array(rows).fill().map(() => new Array(columns).fill(0));
     },
     tetromino() {
         gameSettings.indexMatrixTetromino = 0;
         const name =
-            gameSettings.nextTetromino.tetromino ||
-            TETROMINO_NAMES[Math.floor(Math.random() * TETROMINO_NAMES.length)];
-        gameSettings.nextTetromino.tetromino =
-            TETROMINO_NAMES[Math.floor(Math.random() * TETROMINO_NAMES.length)];
-        gameSettings.nextTetromino.matrix =
-            TETROMINOES[gameSettings.nextTetromino.tetromino][0];
+            gameSettings.nextTetromino.tetromino || TETROMINO_NAMES[Math.floor(Math.random() * TETROMINO_NAMES.length)];
+        gameSettings.nextTetromino.tetromino = TETROMINO_NAMES[Math.floor(Math.random() * TETROMINO_NAMES.length)];
+        gameSettings.nextTetromino.matrix = TETROMINOES[gameSettings.nextTetromino.tetromino][0];
 
         const matrix = TETROMINOES[name][0];
         const rowTetro = -2;
@@ -215,11 +201,8 @@ const generate = {
         };
 
         gameSettings.tetrominoColor =
-            gameSettings.nextTetromino.color ||
-            generate.colorForTetromino(gameSettings.styleGame);
-        gameSettings.nextTetromino.color = generate.colorForTetromino(
-            gameSettings.styleGame,
-        );
+            gameSettings.nextTetromino.color || generate.colorForTetromino(gameSettings.styleGame);
+        gameSettings.nextTetromino.color = generate.colorForTetromino(gameSettings.styleGame);
     },
     generateTetrisDecorationField(decorBlock) {
         const DECORATIVE_PLAYFIELD_ROWS = 23;
@@ -251,11 +234,7 @@ const generate = {
             1, 0,
         ];
 
-        for (
-            let i = 0;
-            i < DECORATIVE_PLAYFIELD_ROWS * DECORATIVE_PLAYFIELD_COLUMNS;
-            i++
-        ) {
+        for (let i = 0; i < DECORATIVE_PLAYFIELD_ROWS * DECORATIVE_PLAYFIELD_COLUMNS; i++) {
             const decorCell = document.createElement("div");
             decorCell.classList.add("decor-cell");
 
@@ -337,11 +316,8 @@ const gameRenderer = {
                     img.src = `./img/${gameSettings.styleGame}.${gameSettings.imageFormat}`;
 
                     gameSettings.cells[cellIndex].append(img);
-                    gameSettings.cells[cellIndex].style.backgroundColor =
-                        gameSettings.tetrominoColor;
-                    gameSettings.cells[cellIndex].classList.add(
-                        `${gameSettings.styleGame}-block`,
-                    );
+                    gameSettings.cells[cellIndex].style.backgroundColor = gameSettings.tetrominoColor;
+                    gameSettings.cells[cellIndex].classList.add(`${gameSettings.styleGame}-block`);
                 }
             }
         }
@@ -353,13 +329,10 @@ const gameRenderer = {
         for (let row = 0; row < tetrominoMatrixSize; row++) {
             for (let column = 0; column < tetrominoMatrixSize; column++) {
                 if (!gameSettings.nextTetromino.matrix[row][column]) continue;
-                const cellIndex =
-                    row * gameSettings.nextTetromino.field.columns + column;
+                const cellIndex = row * gameSettings.nextTetromino.field.columns + column;
 
                 if (cellIndex >= 0)
-                    gameSettings.nextTetrominoCells[cellIndex].classList.add(
-                        `${gameSettings.styleGame}-block`,
-                    );
+                    gameSettings.nextTetrominoCells[cellIndex].classList.add(`${gameSettings.styleGame}-block`);
 
                 if (cellIndex >= 0) {
                     gameSettings.nextTetrominoCells[cellIndex].innerHTML = "";
@@ -367,9 +340,7 @@ const gameRenderer = {
                     img.src = `./img/${gameSettings.styleGame}.${gameSettings.imageFormat}`;
 
                     gameSettings.nextTetrominoCells[cellIndex].append(img);
-                    gameSettings.nextTetrominoCells[
-                        cellIndex
-                    ].style.backgroundColor = gameSettings.nextTetromino.color;
+                    gameSettings.nextTetrominoCells[cellIndex].style.backgroundColor = gameSettings.nextTetromino.color;
                 }
             }
         }
@@ -394,19 +365,12 @@ const gameRenderer = {
         gameRenderer.drawNextTetromino();
     },
     drawTetrisDecorationTetrominoes() {
-        generate.generateTetrisDecorationField(
-            DECOR_ELEMENTS[0],
-            gameSettings.styleGame,
-        );
-        generate.generateTetrisDecorationField(
-            DECOR_ELEMENTS[1],
-            gameSettings.styleGame,
-        );
+        generate.generateTetrisDecorationField(DECOR_ELEMENTS[0], gameSettings.styleGame);
+        generate.generateTetrisDecorationField(DECOR_ELEMENTS[1], gameSettings.styleGame);
     },
     coloringTetris() {
         document.querySelector(".tetris").style.backgroundColor = tetrisColor;
-        document.querySelector(".tetris__title").style.backgroundColor =
-            tetrisColor;
+        document.querySelector(".tetris__title").style.backgroundColor = tetrisColor;
     },
     // redrawTheGameStyle() {
     //     gameSettings.resetSettings();
@@ -444,6 +408,11 @@ const pointsScore = {
     cleanThreeLines: 0,
     cleanFourLines: 0,
     multiplier: 1.5,
+    pointsToNextLevel: 50,
+    multiplierToNextLevel: 1.5,
+    calculatePointsToNextLevel() {
+        this.pointsToNextLevel += Math.floor(this.pointsToNextLevel * this.multiplierToNextLevel);
+    },
     countPoints() {
         this.cleanTwoLines = this.cleanOneLine * this.multiplier;
         this.cleanThreeLines = this.cleanTwoLines * this.multiplier;
@@ -455,12 +424,10 @@ const currentGame = {
     maximumPoints: 0,
     clearedLines: 0,
     level: 1,
-    pointsToNextLevel: 50,
-    multiplierToNextLevel: 1.5,
-    calculatePointsToNextLevel() {
-        this.pointsToNextLevel += Math.floor(
-            this.pointsToNextLevel * this.multiplierToNextLevel,
-        );
+    reset() {
+        this.maximumPoints = 0;
+        this.clearedLines = 0;
+        this.level = 1;
     },
 };
 
@@ -468,14 +435,10 @@ const control = {
     rotate() {
         if (check.canRotateTetromino()) {
             gameSettings.indexMatrixTetromino =
-                gameSettings.indexMatrixTetromino >=
-                TETROMINOES[gameSettings.tetromino.name].length - 1
+                gameSettings.indexMatrixTetromino >= TETROMINOES[gameSettings.tetromino.name].length - 1
                     ? 0
                     : ++gameSettings.indexMatrixTetromino;
-            gameSettings.tetromino.matrix =
-                TETROMINOES[gameSettings.tetromino.name][
-                    gameSettings.indexMatrixTetromino
-                ];
+            gameSettings.tetromino.matrix = TETROMINOES[gameSettings.tetromino.name][gameSettings.indexMatrixTetromino];
         }
     },
     moveTetrominoDown() {
@@ -537,6 +500,7 @@ const sound = {
 };
 
 function resetALL() {
+    console.log("resetALL start");
     console.log("----------------------------------");
     console.log("------------RESET DONE------------");
     console.log("----------------------------------");
@@ -552,6 +516,8 @@ function resetALL() {
     stepInterval = null;
 
     gameSettings.resetSettings();
+    currentGame.reset();
+
     initGame();
 
     PAUSE_TITLE.classList.remove("none");
@@ -576,63 +542,12 @@ function initGame() {
     generate.tetromino();
 
     gameSettings.cells = document.querySelectorAll(".play-field__cell");
-    gameSettings.nextTetrominoCells = document.querySelectorAll(
-        ".next-tetromino__cell",
-    );
+    gameSettings.nextTetrominoCells = document.querySelectorAll(".next-tetromino__cell");
 
     // prettier-ignore
     localStorage.getItem("btnStyle") ?
         GAME_STYLES_BTNS[localStorage.getItem("btnStyle")].classList.add("active") :
         GAME_STYLES_BTNS[0].classList.add("active");
-
-    document.addEventListener("keydown", onKeyDown);
-
-    GAME_STYLES_BTNS.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-            gameSettings.styleGame = btn.dataset.style;
-            localStorage.setItem("styleGame", gameSettings.styleGame);
-            localStorage.setItem("btnStyle", index);
-            location.reload(); // !!! переробити
-            // gameRenderer.redrawTheGameStyle();// почекає до кращих часів)
-        });
-    });
-
-    COLOR_PICKER.addEventListener("input", (e) => {
-        tetrisColor = e.target.value;
-        localStorage.setItem("tetrisColor", tetrisColor);
-        gameRenderer.coloringTetris();
-    });
-
-    function simulationKeydown(code) {
-        const event = new KeyboardEvent("keydown", {
-            code: code,
-        });
-        document.dispatchEvent(event);
-    }
-
-    INFO_WINDOW_BTN.addEventListener("click", showInfoWindow);
-    INFO_WINDOW_BTN.addEventListener("click", showInfoWindow);
-
-    ICON_SOUND.addEventListener("click", sound.toggle);
-
-    ICON_PAUSE.addEventListener("click", togglePause);
-
-    RESTART_BTN.addEventListener("click", resetALL);
-    PAUSE_BTN.addEventListener("click", () => {
-        simulationKeydown("KeyP");
-    });
-    ROTATE_BTN.addEventListener("click", () => {
-        simulationKeydown("KeyW");
-    });
-    DOWN_BTN.addEventListener("click", () => {
-        simulationKeydown("KeyS");
-    });
-    LEFT_BTN.addEventListener("click", () => {
-        simulationKeydown("KeyA");
-    });
-    RIGHT_BTN.addEventListener("click", () => {
-        simulationKeydown("KeyD");
-    });
 }
 
 function onKeyDown(e) {
@@ -675,18 +590,13 @@ function onKeyDown(e) {
     if (gameSettings.soundOn && soundSrc) sound.play(soundSrc);
 }
 
-function showInfoWindow() {
-    INFO_WINDOW.classList.toggle("active");
-    INFO_WINDOW_ARROW.classList.toggle("active");
-}
-
 initGame();
 
 import { fillGameBoard } from "./modules/_game-over.js";
+import { createMessageDestruction, createMessageLevelUp, createMessageTouchdown } from "./modules/_info-window.js";
 
 function handleTetrominoInteraction() {
     function gameOver() {
-        // доробити
         togglePause();
         clearInterval(stepInterval);
         stepInterval = null;
@@ -697,13 +607,14 @@ function handleTetrominoInteraction() {
 
     function getLevelUp() {
         currentGame.level++;
-        currentGame.calculatePointsToNextLevel();
+        pointsScore.calculatePointsToNextLevel();
         LEVEL.innerHTML = currentGame.level;
 
         if (gameSettings.fallRate <= 0.1) {
             return;
         }
         gameSettings.fallRate -= gameSettings.multiplierFallRate;
+        console.log(gameSettings.fallRate);
     }
 
     function findFillRow() {
@@ -723,28 +634,24 @@ function handleTetrominoInteraction() {
     }
 
     function getPointsForDestroyingLines(fillRows) {
+        let exp = null;
         switch (fillRows) {
             case 1:
-                currentGame.maximumPoints += Math.floor(
-                    pointsScore.cleanOneLine,
-                );
+                exp = Math.floor(pointsScore.cleanOneLine);
                 break;
             case 2:
-                currentGame.maximumPoints += Math.floor(
-                    pointsScore.cleanTwoLines,
-                );
+                exp = Math.floor(pointsScore.cleanTwoLines);
                 break;
             case 3:
-                currentGame.maximumPoints += Math.floor(
-                    pointsScore.cleanThreeLines,
-                );
+                exp = Math.floor(pointsScore.cleanThreeLines);
                 break;
             case 4:
-                currentGame.maximumPoints += Math.floor(
-                    pointsScore.cleanFourLines,
-                );
+                exp = Math.floor(pointsScore.cleanFourLines);
                 break;
         }
+
+        currentGame.maximumPoints += exp;
+        createMessageDestruction(exp, fillRows);
         MAXIMUM_POINTS.innerHTML = currentGame.maximumPoints;
     }
 
@@ -755,26 +662,20 @@ function handleTetrominoInteraction() {
                 const upperCellIndex = removeCellIndex - PLAYFIELD_COLUMNS;
 
                 gameSettings.cells[removeCellIndex].innerHTML = "";
-                gameSettings.cells[removeCellIndex].classList.remove(
-                    `stable-${gameSettings.styleGame}-block`,
-                );
+                gameSettings.cells[removeCellIndex].classList.remove(`stable-${gameSettings.styleGame}-block`);
 
-                gameSettings.cells[removeCellIndex].style.backgroundColor =
-                    "purple";
+                gameSettings.cells[removeCellIndex].style.backgroundColor = "purple";
                 gameSettings.cells[removeCellIndex].innerHTML = "+";
 
                 if (gameSettings.playfield[rowDelete - 1][column]) {
-                    gameSettings.playfield[row][column] =
-                        gameSettings.playfield[row - 1][column];
+                    gameSettings.playfield[row][column] = gameSettings.playfield[row - 1][column];
 
                     let img = document.createElement("img");
                     img.src = `./img/${gameSettings.styleGame}.${gameSettings.imageFormat}`;
                     gameSettings.cells[removeCellIndex].append(img);
 
                     gameSettings.cells[upperCellIndex].innerHTML = "";
-                    gameSettings.cells[upperCellIndex].classList.remove(
-                        `stable-${gameSettings.styleGame}-block`,
-                    );
+                    gameSettings.cells[upperCellIndex].classList.remove(`stable-${gameSettings.styleGame}-block`);
 
                     gameSettings.cells[removeCellIndex].innerHTML = "-";
                 } else {
@@ -795,9 +696,7 @@ function handleTetrominoInteraction() {
 
             gameSettings.cells[removeCellIndex].classList.add("blinking");
             setTimeout(() => {
-                gameSettings.cells[removeCellIndex].classList.remove(
-                    "blinking",
-                );
+                gameSettings.cells[removeCellIndex].classList.remove("blinking");
                 counter++;
 
                 if (counter == PLAYFIELD_COLUMNS) {
@@ -811,6 +710,7 @@ function handleTetrominoInteraction() {
         getPointsForDestroyingLines(fillRows.length);
         if (check.isLevelUp()) {
             getLevelUp();
+            createMessageLevelUp();
         }
 
         for (const row of fillRows) {
@@ -823,24 +723,21 @@ function handleTetrominoInteraction() {
 
         for (let row = 0; row < matrixSize; row++) {
             for (let column = 0; column < matrixSize; column++) {
-                if (
-                    gameSettings.tetromino.row <= 0 &&
-                    !gameSettings.isGamePaused
-                ) {
+                if (gameSettings.tetromino.row <= 0 && !gameSettings.isGamePaused) {
                     gameOver();
                     return;
                 }
 
                 if (gameSettings.tetromino.matrix[row][column]) {
-                    gameSettings.playfield[gameSettings.tetromino.row + row][
-                        gameSettings.tetromino.column + column
-                    ] =
+                    gameSettings.playfield[gameSettings.tetromino.row + row][gameSettings.tetromino.column + column] =
                         `stable-${gameSettings.styleGame}-block ${gameSettings.tetrominoColor}`;
                 }
             }
         }
 
         currentGame.maximumPoints += pointsScore.touchdown;
+        createMessageTouchdown();
+
         if (check.isLevelUp()) {
             getLevelUp();
         }
@@ -886,6 +783,7 @@ function tetrominoMoveDown() {
 }
 
 function togglePause() {
+    console.log("togglePause start");
     clearInterval(canTetrominoMove);
     canTetrominoMove = null;
     if (gameSettings.gameOver) {
@@ -913,6 +811,8 @@ function togglePause() {
 
         tetrominoMoveDown();
     }
+
+    console.log("togglePause end");
 }
 
 function countingTime() {
@@ -927,9 +827,77 @@ function countingTime() {
     }
 }
 
+document.addEventListener("keydown", onKeyDown);
+
+GAME_STYLES_BTNS.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        gameSettings.styleGame = btn.dataset.style;
+        localStorage.setItem("styleGame", gameSettings.styleGame);
+        localStorage.setItem("btnStyle", index);
+        location.reload(); // !!! переробити
+        // gameRenderer.redrawTheGameStyle();// почекає до кращих часів)
+    });
+});
+
+COLOR_PICKER.addEventListener("input", (e) => {
+    tetrisColor = e.target.value;
+    localStorage.setItem("tetrisColor", tetrisColor);
+    gameRenderer.coloringTetris();
+});
+
+function simulationKeydown(code) {
+    const event = new KeyboardEvent("keydown", {
+        code: code,
+    });
+    document.dispatchEvent(event);
+}
+
+ICON_SOUND.addEventListener("click", sound.toggle);
+
+ICON_PAUSE.addEventListener("click", togglePause);
+
+RESTART_BTN.addEventListener("click", resetALL);
+PAUSE_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyP");
+});
+ROTATE_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyW");
+});
+DOWN_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyS");
+});
+LEFT_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyA");
+});
+RIGHT_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyD");
+});
+
+ANDROID_PAUSE_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyP");
+});
+ANDROID_RESTART_BTN.addEventListener("click", resetALL);
+ANDROID_DROP_BTN.addEventListener("click", () => {
+    simulationKeydown("Space");
+});
+ANDROID_ROTATE_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyW");
+});
+ANDROID_LEFT_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyA");
+});
+ANDROID_RIGHT_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyD");
+});
+ANDROID_DOWN_BTN.addEventListener("click", () => {
+    simulationKeydown("KeyS");
+});
+
 // prettier-ignore
 export {  
     generate, 
     convertPositionToIndex,
     gameSettings,
+    pointsScore,
+    currentGame,
 };

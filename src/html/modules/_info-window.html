@@ -1,84 +1,135 @@
-<div class="info-window">
-    <div class="info-window__inner">
-        <h3 class="info-window__title">керування клавішами:</h3>
-        <ul class="info-window__list">
-            <li class="info-window__item">вліво - A</li>
-            <li class="info-window__item">вправо - D</li>
-            <li class="info-window__item">вниз - S</li>
-            <li class="info-window__item">обертання - W</li>
-            <li class="info-window__item">падіння - Space</li>
-            <li class="info-window__item">пауза - P</li>
-            <li class="info-window__item">зміна фігури - Ctrl</li>
-        </ul>
-
-        <hr />
-
-        <div class="info-window__changelog">
-            <h3 class="info-window__title">версія 0.6</h3>
-            <h3 class="info-window__title">версія 0.5</h3>
-            <ul class="info-window__list">
-                <li class="info-window__item">дофіга і стільки ж хотів, але не встиг</li>
-            </ul>
-            
-
-            <h3 class="info-window__title">версія 0.4</h3>
-            <ul class="info-window__list">
-                <li class="info-window__item">виправлено баг з обертанням</li>
-                <li class="info-window__item">оптимізація коду, стилів</li>
-                <li class="info-window__item">реалізовано знищення рядків</li>
-                <!-- <li class="info-window__item"></li> -->
-                <!-- <li class="info-window__item"></li> -->
-                <!-- <li class="info-window__item"></li> -->
-            </ul>
-
-            <hr />
-
-            <h3 class="info-window__title">версія 0.3</h3>
-            <ul class="info-window__list">
-                <li class="info-window__item">додано власний спосіб обертання фігур</li>
-                <li class="info-window__item">реалізовано увімк/вимк звуку</li>
-                <li class="info-window__item">реалізована пауза</li>
-                <li class="info-window__item">реалізовано таймер</li>
-                <li class="info-window__item">логіка нарахування балів</li>
-                <li class="info-window__item">відображення наступної фігури та її кольору</li>
-                <li class="info-window__item">збільшення рівня</li>
-                <li class="info-window__item">збільшення швидкості з рівнем</li>
-            </ul>
-
-            <hr />
-
-            <h3 class="info-window__title">версія 0.2</h3>
-            <ul class="info-window__list">
-                <li class="info-window__item">зроблено переклад (вибирається автоматично, або можна вручну)</li>
-                <li class="info-window__item">додано фавікон</li>
-                <li class="info-window__item">додано лоадер</li>
-                <li class="info-window__item">підготовка до наступних кроків</li>
-            </ul>
-
-            <hr />
-
-            <h3 class="info-window__title">версія 0.1</h3>
-            <ul class="info-window__list">
-                <li class="info-window__item">вибір стилю гри</li>
-                <li class="info-window__item">вибір кольору для консолі</li>
-                <li class="info-window__item">рухи ←↓→</li>
-                <li class="info-window__item">додано 7 фігур</li>
-                <li class="info-window__item">зміна фігури в ручному режимі</li>
-                <li class="info-window__item">додано кілька звуків</li>
-            </ul>
-
-            <hr />
-
-            <h3 class="info-window__title">в наступних версіях</h3>
-            <ul class="info-window__list">
-                <li class="info-window__item">очищення лінії + реалізація відповідної статистики</li>
-                <li class="info-window__item">більше звуків</li>
-                <li class="info-window__item">адаптив під смартфони + кнопки керування</li>
-                <li class="info-window__item">оптимізація коду, розмітки та стилів</li>
-            </ul>
+<div class="info-window non-select active">
+    <div class="info-window__header">
+        <div class="info-window__btn">
+            <div class="info-window__collapse"></div>
         </div>
     </div>
-    <div class="info-window__btn">
-        <span class="info-window__arrow">▼</span>
+
+    <div class="info-window__body">
+        <div class="info-window__tabs">
+            <div class="info-window__tab tab-achievement active">
+                <span class="material-icons md-18"> star_rate </span>
+            </div>
+            <div class="info-window__tab tab-control">
+                <span class="material-icons md-18"> sports_esports </span>
+            </div>
+            <div class="info-window__tab tab-changelog">
+                <span class="material-icons md-18"> casino </span>
+            </div>
+        </div>
+        <div class="info-window__inner">
+            <div class="info-window__achievement achievement active">
+                <!-- <div class="achievement__experience">
+                    <p>Отримано <span>10</span> досвіду за приземлення блоку</p>
+                </div>
+                <div class="achievement__lvl-up">
+                    <p>Ви перейшли на <span>2</span> рівень</p>
+                </div>
+                <div class="achievement__experience">
+                    <p>Отримано <span>100</span> досвіду за знищення <span>1</span> лінії</p>
+                </div>
+                <div class="achievement__experience">
+                    <p>Отримано <span>200</span> досвіду за знищення <span>2</span> ліній</p>
+                </div>
+                <div class="achievement__experience">
+                    <p>Отримано <span>300</span> досвіду за знищення <span>3</span> ліній</p>
+                </div>
+                <div class="achievement__experience">
+                    <p>Отримано <span>400</span> досвіду за знищення <span>4</span> ліній</p>
+                </div> -->
+            </div>
+
+            <div class="info-window__control control">
+                <h3 class="control__title">керування клавішами:</h3>
+                <ul class="control__list">
+                    <li class="control__item">вліво - A</li>
+                    <li class="control__item">вправо - D</li>
+                    <li class="control__item">вниз - S</li>
+                    <li class="control__item">обертання - W</li>
+                    <li class="control__item">падіння - Space</li>
+                    <li class="control__item">пауза - P</li>
+                    <li class="control__item">зміна фігури - Ctrl</li>
+                </ul>
+            </div>
+
+            <div class="info-window__changelog changelog">
+                <p>багато всього ще можна доробити, додати, пофіксити, але вже як є</p>
+                <p style="color: burlywood; font-style: italic; padding: 4px 0">
+                    є localStorage! :) навіть проміс десь завалявся))
+                </p>
+
+                <hr />
+
+                <h3 class="changelog__title">версія 0.7</h3>
+                <ul class="changelog__list">
+                    <li class="changelog__item">пофіксив кілька багів</li>
+                    <li class="changelog__item">мобільна версія</li>
+                    <li class="changelog__item">це вікно змінив (його можна згорнути та пересунути)</li>
+                    <li class="changelog__item">
+                        на першій вкладні відображається інформація про отриманий досвід та рівень
+                    </li>
+                    <li class="changelog__item"></li>
+                </ul>
+
+                <hr />
+
+                <h3 class="changelog__title">версія 0.6</h3>
+                <h3 class="changelog__title">версія 0.5</h3>
+                <ul class="changelog__list">
+                    <li class="changelog__item">додано радіо</li>
+                    <li class="changelog__item">мова тепер змінюється без перезавантаження сторінки</li>
+                    <li class="changelog__item">змін було багато, треба було записати</li>
+                    <li class="changelog__item">при програщі є "цікаве" заповнення ігрового поля</li>
+                    <li class="changelog__item">при знищені ліній - є коротка анімація</li>
+                </ul>
+
+                <hr />
+
+                <h3 class="changelog__title">версія 0.4</h3>
+                <ul class="changelog__list">
+                    <li class="changelog__item">виправлено баг з обертанням</li>
+                    <li class="changelog__item">оптимізація коду, стилів</li>
+                    <li class="changelog__item">реалізовано знищення рядків</li>
+                </ul>
+
+                <hr />
+
+                <h3 class="changelog__title">версія 0.3</h3>
+                <ul class="changelog__list">
+                    <li class="changelog__item">додано власний спосіб обертання фігур</li>
+                    <li class="changelog__item">реалізовано увімк/вимк звуку</li>
+                    <li class="changelog__item">реалізована пауза</li>
+                    <li class="changelog__item">реалізовано таймер</li>
+                    <li class="changelog__item">логіка нарахування балів</li>
+                    <li class="changelog__item">відображення наступної фігури та її кольору</li>
+                    <li class="changelog__item">збільшення рівня</li>
+                    <li class="changelog__item">збільшення швидкості з рівнем</li>
+                </ul>
+
+                <hr />
+
+                <h3 class="changelog__title">версія 0.2</h3>
+                <ul class="changelog__list">
+                    <li class="changelog__item">зроблено переклад (вибирається автоматично, або можна вручну)</li>
+                    <li class="changelog__item">додано фавікон</li>
+                    <li class="changelog__item">додано лоадер</li>
+                    <li class="changelog__item">підготовка до наступних кроків</li>
+                </ul>
+
+                <hr />
+
+                <h3 class="changelog__title">версія 0.1</h3>
+                <ul class="changelog__list">
+                    <li class="changelog__item">вибір стилю гри</li>
+                    <li class="changelog__item">вибір кольору для консолі</li>
+                    <li class="changelog__item">рухи ←↓→</li>
+                    <li class="changelog__item">додано 7 фігур</li>
+                    <li class="changelog__item">зміна фігури в ручному режимі</li>
+                    <li class="changelog__item">додано кілька звуків</li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <div class="info-window__footer"></div>
 </div>

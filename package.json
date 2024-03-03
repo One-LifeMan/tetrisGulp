@@ -71,6 +71,7 @@
     "dependencies": {
         "gulp-htmlmin": "^5.0.1",
         "handlebars": "^4.7.8",
+        "howler": "^2.2.4",
         "i18next": "^23.10.0",
         "i18next-browser-languagedetector": "^7.2.0",
         "i18next-http-backend": "^2.5.0"
