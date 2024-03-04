@@ -29,21 +29,12 @@
 ### 💻
 
 <img src="./readme/key-w.svg" alt="W" width="32" height="32"> - обертання фігури
-<img src="./readme/key-w.png" alt="W" width="32" height="32"> - обертання фігури
-<img src="./readme/key-a.png" alt="A" width="32" height="32"> - вліво
-<img src="./readme/key-s.png" alt="S" width="32" height="32"> - вниз
-<img src="./readme/key-d.png" alt="D" width="32" height="32"> - вправо
-<img src="./readme/key-p.png" alt="P" width="32" height="32"> - пауза
-<img src="./readme/key-space.png" alt="Space" width="32" height="32"> - швидке падіння фігури
-<img src="./readme/key-ctrl.png" alt="Ctrl" width="32" height="32"> - інша фігура (чит)
-
-<!-- ![W](./readme/key-w.png) - обертання фігури
-![A](./readme/key-a.png) - вліво
-![S](./readme/key-s.png) - вниз
-![D](./readme/key-d.png) - вправо
-![P](./readme/key-p.png) - пауза
-![Space](./readme/key-space.png) - швидке падіння фігури
-![Ctrl](./readme/key-ctrl.png) - інша фігура (чит) -->
+<img src="./readme/key-a.svg" alt="A" width="32" height="32"> - вліво
+<img src="./readme/key-s.svg" alt="S" width="32" height="32"> - вниз
+<img src="./readme/key-d.svg" alt="D" width="32" height="32"> - вправо
+<img src="./readme/key-p.svg" alt="P" width="32" height="32"> - пауза
+<img src="./readme/key-space.svg" alt="Space" width="32" height="32"> - швидке падіння фігури
+<img src="./readme/key-ctrl.svg" alt="Ctrl" width="32" height="32"> - інша фігура (чит)
 
 ### 📱
 
@@ -62,33 +53,33 @@
 
 ### Збірщики
 
-![gulp](./readme/technologies/gulp.svg)
-![webpack](./readme/technologies/webpack.svg)
+<img src="./readme/technologies/gulp.svg" alt="gulp" width="32" height="32">
+<img src="./readme/technologies/webpack.svg" alt="webpack" width="32" height="32">
 
 ### Лінтери
 
-![eslint](./readme/technologies/eslint.svg)
-![prettier](./readme/technologies/prettier.svg)
-![stylelint](./readme/technologies/stylelint.svg)
+<img src="./readme/technologies/eslint.svg" alt="eslint" width="32" height="32">
+<img src="./readme/technologies/prettier.svg" alt="prettier" width="32" height="32">
+<img src="./readme/technologies/stylelint.svg" alt="stylelint" width="32" height="32">
 
 ### Інструменти розробки
 
-![editorconfig](./readme/technologies/editorconfig.svg)
-![npm](./readme/technologies/npm.svg)
-![visualstudiocode](./readme/technologies/visualstudiocode.svg)
+<img src="./readme/technologies/editorconfig.svg" alt="editorconfig" width="32" height="32">
+<img src="./readme/technologies/npm.svg" alt="npm" width="32" height="32">
+<img src="./readme/technologies/visualstudiocode.svg" alt="visualstudiocode" width="32" height="32">
 
 ### Фронтенд
 
-![html5](./readme/technologies/html5.svg)
-![sass](./readme/technologies/sass.svg)
-![javascript](./readme/technologies/javascript.svg)
-![babel](./readme/technologies/babel.svg)
-![postcss](./readme/technologies/postcss.svg)
-![i18next](./readme/technologies/i18next.svg)
+<img src="./readme/technologies/html5.svg" alt="html5" width="32" height="32">
+<img src="./readme/technologies/sass.svg" alt="sass" width="32" height="32">
+<img src="./readme/technologies/javascript.svg" alt="javascript" width="32" height="32">
+<img src="./readme/technologies/babel.svg" alt="babel" width="32" height="32">
+<img src="./readme/technologies/postcss.svg" alt="postcss" width="32" height="32">
+<img src="./readme/technologies/i18next.svg" alt="i18next" width="32" height="32">
 
 ### Інше
 
-![adobeillustrator](./readme/technologies/adobeillustrator.svg)
-![adobephotoshop](./readme/technologies/adobephotoshop.svg)
-![brave](./readme/technologies/brave.svg)
-![json](./readme/technologies/json.svg)
+<img src="./readme/technologies/adobeillustrator.svg" alt="adobeillustrator" width="32" height="32">
+<img src="./readme/technologies/adobephotoshop.svg" alt="adobephotoshop" width="32" height="32">
+<img src="./readme/technologies/brave.svg" alt="brave" width="32" height="32">
+<img src="./readme/technologies/json.svg" alt="json" width="32" height="32">
