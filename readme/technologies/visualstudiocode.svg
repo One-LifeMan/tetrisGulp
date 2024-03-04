@@ -1,1 +1,55 @@
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Visual Studio Code</title><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #29abe2;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-3);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-158.67" y1="86" x2="-158.67" y2="82.4" gradientTransform="translate(4048.34 2155.04) scale(25 -25)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#32b5f1"/>
+      <stop offset="1" stop-color="#2b9fed"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-159.04" y1="85.56" x2="-161.61" y2="83.4" gradientTransform="translate(4048.34 2155.04) scale(25 -25)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f6fb3"/>
+      <stop offset=".27" stop-color="#1279b7"/>
+      <stop offset=".42" stop-color="#1176b5"/>
+      <stop offset=".62" stop-color="#0e69ac"/>
+      <stop offset=".86" stop-color="#0f70af"/>
+      <stop offset="1" stop-color="#0f6dad"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="-161.6" y1="84.96" x2="-159.04" y2="82.84" gradientTransform="translate(4048.34 2155.04) scale(25 -25)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1791d2"/>
+      <stop offset="1" stop-color="#1173c5"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect class="cls-3" x=".5" y=".5" width="99" height="99" rx="19.5" ry="19.5"/>
+    <path class="cls-2" d="M80,1c10.48,0,19,8.52,19,19v60c0,10.48-8.52,19-19,19H20c-10.48,0-19-8.52-19-19V20C1,9.52,9.52,1,20,1h60M80,0H20C9,0,0,9,0,20v60c0,11,9,20,20,20h60c11,0,20-9,20-20V20c0-11-9-20-20-20h0Z"/>
+  </g>
+  <g>
+    <path class="cls-1" d="M72.51,8.59c0-2.83-3.16-2.83-4.57-2.47,1.97-1.55,4.28-1.18,5.1-.71l19.01,9.32c1.81.89,2.96,2.74,2.96,4.76v61.31c0,2.05-1.18,3.92-3.03,4.79l-17.89,8.46c-1.23.53-3.9,1.84-6.15,0,2.81.53,4.33-1.47,4.57-2.83V8.59Z"/>
+    <path class="cls-4" d="M68.16,6.07c1.49-.29,4.34-.16,4.34,2.52v21.1L14.88,73.29c-1.01.76-2.42.64-3.28-.29l-5.94-6.43c-.93-1.01-.87-2.58.14-3.51L67.94,6.12l.23-.05Z"/>
+    <path class="cls-5" d="M72.51,70.48L14.88,26.88c-1.01-.76-2.42-.64-3.28.29l-5.94,6.43c-.93,1.01-.87,2.58.14,3.51l62.13,56.94c2.81.53,4.34-1.47,4.57-2.83v-20.75Z"/>
+  </g>
+</svg>

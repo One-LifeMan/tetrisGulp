@@ -65,7 +65,7 @@
 
 ### Інструменти розробки
 
-<img src="./readme/technologies/editorconfig.svg" alt="editorconfig" height="32"> <img src="./readme/technologies/npm.svg" alt="npm" height="32"> <img src="./readme/technologies/visualstudiocode.svg" alt="visualstudiocode" height="32">
+<img src="./readme/technologies/editorconfig.svg" alt="editorconfig" height="32"> <img src="./readme/technologies/npm.svg" alt="npm" height="32"> <img src="./readme/technologies/visualstudiocode.svg" alt="visualstudiocode" height="32"> <img src="./readme/technologies/git.svg" alt="git" height="32"> <img src="./readme/technologies/nodejs.svg" alt="nodejs" height="32">
 
 ### Фронтенд
 
