@@ -4,11 +4,11 @@
 
 ## Опис
 
-Гра розроблена на двотижневому марафоні "Пишемо гру Tetris від [CyberBionic Systematics](https://edu.cbsystematics.com/ua).
+Гра розроблена на двотижневому марафоні "Пишемо гру Tetris" від [CyberBionic Systematics](https://edu.cbsystematics.com/ua).
 
-> -   🎓 Ментор курсу - Віталій Мазяр
-> -   🤝 Помічник ментора - Олексій Кучеренко
-> -   🔎 Куратор чату - Сергій Довгаль
+-   🎓 Ментор курсу - Віталій Мазяр
+-   🤝 Помічник ментора - Олексій Кучеренко
+-   🔎 Куратор чату - Сергій Довгаль
 
 ### Особливості гри
 
@@ -28,13 +28,21 @@
 
 ### 💻
 
-![W](./readme/key-w.svg) - обертання фігури
-![A](./readme/key-a.svg) - вліво
-![S](./readme/key-s.svg) - вниз
-![D](./readme/key-d.svg) - вправо
-![P](./readme/key-p.svg) - пауза
-![Space](./readme/key-space.svg) - швидке падіння фігури
-![Ctrl](./readme/key-ctrl.svg) - інша фігура (чит)
+<img src="./readme/key-w.png" alt="W" width="32" height="32"> - обертання фігури
+<img src="./readme/key-a.png" alt="A" width="32" height="32"> - вліво
+<img src="./readme/key-s.png" alt="S" width="32" height="32"> - вниз
+<img src="./readme/key-d.png" alt="D" width="32" height="32"> - вправо
+<img src="./readme/key-p.png" alt="P" width="32" height="32"> - пауза
+<img src="./readme/key-space.png" alt="Space" width="32" height="32"> - швидке падіння фігури
+<img src="./readme/key-ctrl.png" alt="Ctrl" width="32" height="32"> - інша фігура (чит)
+
+<!-- ![W](./readme/key-w.png) - обертання фігури
+![A](./readme/key-a.png) - вліво
+![S](./readme/key-s.png) - вниз
+![D](./readme/key-d.png) - вправо
+![P](./readme/key-p.png) - пауза
+![Space](./readme/key-space.png) - швидке падіння фігури
+![Ctrl](./readme/key-ctrl.png) - інша фігура (чит) -->
 
 ### 📱
 
@@ -45,7 +53,7 @@
 ![screenshot1](./readme/s1.png)
 ![screenshot2](./readme/s2.png)
 ![screenshot3](./readme/s3.png)
-![screenshot4](./readme/s4.png)
+![screenshot4](./readme/s4.jpg)
 
 [Тут можна пограти](https://fomenko-tetris-071.netlify.app)
 
