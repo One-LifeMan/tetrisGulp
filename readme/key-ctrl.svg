@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ctrl" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        fill: gray;
+      }
+
+      .cls-3 {
+        fill: #b3b3b3;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 19px;
+      }
+
+      .cls-8 {
+        filter: url(#luminosity-noclip);
+      }
+
+      .cls-9 {
+        mask: url(#mask);
+      }
+
+      .cls-5 {
+        fill: #f2f2f2;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="16" y1="21" x2="16" y2="1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3b3b3"/>
+      <stop offset="1" stop-color="#f2f2f2"/>
+    </linearGradient>
+    <filter id="luminosity-noclip" x="0" y="0" width="32" height="8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <mask id="mask" x="0" y="0" width="32" height="8" maskUnits="userSpaceOnUse">
+      <g class="cls-8">
+        <image width="32" height="8" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAICAYAAACYhf2vAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyklEQVQ4jeWTP6qDQBDGf7vqIqiNhRcQK09g77E9ho2w4AHcThBU3EkRTPJeSCC8IsX7YGCmmfn+MAoQvgj9zeMA4dm0bUtd1xRFQZZlGGMIggCl1K0+gYggInjvOY6DbduY5xnnHH3f03XdTwJlWdI0DVVVkec5SZIQRRFaa7TWHxEQuaZ6Ht/3nWVZcM4xjiPruj4TeKX096z1+9S89yilEJGnnaejj7gRsNYSxzHWWtI0xRhDGIZ/iuDRhTOCaZoYhuEukP/+BRfyB1f7pmFuEAAAAABJRU5ErkJggg=="/>
+      </g>
+    </mask>
+  </defs>
+  <polyline class="cls-2" points="16 1 32 24 0 24"/>
+  <polyline class="cls-3" points="32 0 32 24 20 6"/>
+  <polyline class="cls-5" points="0 24 0 0 12 6"/>
+  <polyline class="cls-4" points="16 8 0 0 32 0"/>
+  <rect class="cls-1" x="2" y="1" width="28" height="20"/>
+  <text class="cls-7" transform="translate(1.96 17.58)"><tspan x="0" y="0">Ct</tspan><tspan class="cls-6" x="17.31" y="0">r</tspan><tspan x="23.6" y="0">l</tspan></text>
+  <g class="cls-9">
+    <rect class="cls-4" x="2" y="2" width="28" height="4"/>
+  </g>
+</svg>

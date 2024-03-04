@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="D" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: gray;
+      }
+
+      .cls-3 {
+        fill: #b3b3b3;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 19px;
+      }
+
+      .cls-7 {
+        filter: url(#luminosity-noclip);
+      }
+
+      .cls-8 {
+        mask: url(#mask);
+      }
+
+      .cls-5 {
+        fill: #f2f2f2;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="12" y1="21" x2="12" y2="1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3b3b3"/>
+      <stop offset="1" stop-color="#f2f2f2"/>
+    </linearGradient>
+    <filter id="luminosity-noclip" x="0" y="0" width="24" height="8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <mask id="mask" x="0" y="0" width="24" height="8" maskUnits="userSpaceOnUse">
+      <g class="cls-7">
+        <image width="24" height="8" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAICAYAAADjoT9jAAAACXBIWXMAAAsSAAALEgHS3X78AAAAvklEQVQokdWSMQqEMBBFX2IMgtpYeAGx8gT2Httj2AgBD2A6QVDRbLHEdRe33GIHQoaB/Df/EwE4fljyl+IAyjdN01BVFXmek6YpWmuCIEAIcR5fzrnzPo6Dfd9Z15VpmrDW0nUdbdu+A4qioK5ryrIkyzLiOCYMQ6SUSPk06iEe4MW3bWOeZ6y1DMPAsiwn4IzobtOr6HV+nV3feMe3ERljiKIIYwxJkqC1Rin1Ffzpwkc0jiN937+W4d9/0QOGNFH/nKOgZQAAAABJRU5ErkJggg=="/>
+      </g>
+    </mask>
+  </defs>
+  <polyline class="cls-2" points="12 7 24 24 0 24"/>
+  <polyline class="cls-3" points="24 0 24 24 12 7"/>
+  <polyline class="cls-5" points="0 24 0 0 12 7"/>
+  <polyline class="cls-4" points="12 7 0 0 24 0"/>
+  <rect class="cls-1" x="2" y="1" width="20" height="20"/>
+  <text class="cls-6" transform="translate(5.67 17.58)"><tspan x="0" y="0">D</tspan></text>
+  <g class="cls-8">
+    <rect class="cls-4" x="2" y="2" width="20" height="4"/>
+  </g>
+</svg>
