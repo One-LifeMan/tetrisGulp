@@ -28,6 +28,7 @@
 
 ### 💻
 
+<img src="./readme/key-w.svg" alt="W" width="32" height="32"> - обертання фігури
 <img src="./readme/key-w.png" alt="W" width="32" height="32"> - обертання фігури
 <img src="./readme/key-a.png" alt="A" width="32" height="32"> - вліво
 <img src="./readme/key-s.png" alt="S" width="32" height="32"> - вниз
@@ -53,7 +54,7 @@
 ![screenshot1](./readme/s1.png)
 ![screenshot2](./readme/s2.png)
 ![screenshot3](./readme/s3.png)
-![screenshot4](./readme/s4.jpg)
+![screenshot4](./readme/s4.png)
 
 [Тут можна пограти](https://fomenko-tetris-071.netlify.app)
 
