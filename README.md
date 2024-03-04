@@ -28,13 +28,19 @@
 
 ### 💻
 
-: <img src="./readme/key-w.svg" alt="W" height="32"> - обертання фігури
-: <img src="./readme/key-a.svg" alt="A" height="32"> - вліво
-: <img src="./readme/key-s.svg" alt="S" height="32"> - вниз
-: <img src="./readme/key-d.svg" alt="D" height="32"> - вправо
-: <img src="./readme/key-p.svg" alt="P" height="32"> - пауза
-: <img src="./readme/key-space.svg" alt="Space" height="32"> - швидке падіння фігури
-: <img src="./readme/key-ctrl.svg" alt="Ctrl" height="32"> - інша фігура (чит)
+<img src="./readme/key-w.svg" alt="W" height="32"> - обертання фігури
+
+<img src="./readme/key-a.svg" alt="A" height="32"> - вліво
+
+<img src="./readme/key-s.svg" alt="S" height="32"> - вниз
+
+<img src="./readme/key-d.svg" alt="D" height="32"> - вправо
+
+<img src="./readme/key-p.svg" alt="P" height="32"> - пауза
+
+<img src="./readme/key-space.svg" alt="Space" height="32"> - швидке падіння фігури
+
+<img src="./readme/key-ctrl.svg" alt="Ctrl" height="32"> - інша фігура (чит)
 
 ### 📱
 
@@ -53,33 +59,33 @@
 
 ### Збірщики
 
-: <img src="./readme/technologies/gulp.svg" alt="gulp" height="32">
-: <img src="./readme/technologies/webpack.svg" alt="webpack" height="32">
+<img src="./readme/technologies/gulp.svg" alt="gulp" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/webpack.svg" alt="webpack" height="32" background-color="#ccc" border-radius="4px">
 
 ### Лінтери
 
-: <img src="./readme/technologies/eslint.svg" alt="eslint" height="32">
-: <img src="./readme/technologies/prettier.svg" alt="prettier" height="32">
-: <img src="./readme/technologies/stylelint.svg" alt="stylelint" height="32">
+<img src="./readme/technologies/eslint.svg" alt="eslint" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/prettier.svg" alt="prettier" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/stylelint.svg" alt="stylelint" height="32" background-color="#ccc" border-radius="4px">
 
 ### Інструменти розробки
 
-: <img src="./readme/technologies/editorconfig.svg" alt="editorconfig" height="32">
-: <img src="./readme/technologies/npm.svg" alt="npm" height="32">
-: <img src="./readme/technologies/visualstudiocode.svg" alt="visualstudiocode" height="32">
+<img src="./readme/technologies/editorconfig.svg" alt="editorconfig" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/npm.svg" alt="npm" height="32">
+<img src="./readme/technologies/visualstudiocode.svg" alt="visualstudiocode" height="32" background-color="#ccc" border-radius="4px">
 
 ### Фронтенд
 
-: <img src="./readme/technologies/html5.svg" alt="html5" height="32">
-: <img src="./readme/technologies/sass.svg" alt="sass" height="32">
-: <img src="./readme/technologies/javascript.svg" alt="javascript" height="32">
-: <img src="./readme/technologies/babel.svg" alt="babel" height="32">
-: <img src="./readme/technologies/postcss.svg" alt="postcss" height="32">
-: <img src="./readme/technologies/i18next.svg" alt="i18next" height="32">
+<img src="./readme/technologies/html5.svg" alt="html5" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/sass.svg" alt="sass" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/javascript.svg" alt="javascript" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/babel.svg" alt="babel" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/postcss.svg" alt="postcss" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/i18next.svg" alt="i18next" height="32" background-color="#ccc" border-radius="4px">
 
 ### Інше
 
-: <img src="./readme/technologies/adobeillustrator.svg" alt="adobeillustrator" height="32">
-: <img src="./readme/technologies/adobephotoshop.svg" alt="adobephotoshop" height="32">
-: <img src="./readme/technologies/brave.svg" alt="brave" height="32">
-: <img src="./readme/technologies/json.svg" alt="json" height="32">
+<img src="./readme/technologies/adobeillustrator.svg" alt="adobeillustrator" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/adobephotoshop.svg" alt="adobephotoshop" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/brave.svg" alt="brave" height="32" background-color="#ccc" border-radius="4px">
+<img src="./readme/technologies/json.svg" alt="json" height="32" background-color="#ccc" border-radius="4px">
