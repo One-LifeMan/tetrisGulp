@@ -48,8 +48,8 @@
 
 ## Скріншоти
 
-<img src="./readme/s1.png" alt="screenshot1" width="45%"> <img src="./readme/s2.png" alt="screenshot1" width="45%">
-<img src="./readme/s3.png" alt="screenshot2" width="45%"> <img src="./readme/s4.jpg" alt="screenshot4" width="25%">
+<img src="./readme/s1.png" alt="screenshot1" height="200px"> <img src="./readme/s2.png" alt="screenshot1" height="200px">
+<img src="./readme/s3.png" alt="screenshot2" height="200px"> <img src="./readme/s4.jpg" alt="screenshot4" height="200px">
 
 [Тут можна пограти](https://fomenko-tetris-071.netlify.app)
 
