@@ -58,22 +58,22 @@
 
 ### Збірщики
 
-<img src="./readme/technologies/gulp.svg" alt="gulp" height="32"> <img src="./readme/technologies/webpack.svg" alt="webpack" height="32">
+<img src="./readme/technologies/gulp.svg" alt="gulp" height="40px"> <img src="./readme/technologies/webpack.svg" alt="webpack" height="40px">
 
 ### Лінтери
 
-<img src="./readme/technologies/eslint.svg" alt="eslint" height="32"> <img src="./readme/technologies/prettier.svg" alt="prettier" height="32"> <img src="./readme/technologies/stylelint.svg" alt="stylelint" height="32">
+<img src="./readme/technologies/eslint.svg" alt="eslint" height="40px"> <img src="./readme/technologies/prettier.svg" alt="prettier" height="40px"> <img src="./readme/technologies/stylelint.svg" alt="stylelint" height="40px">
 
 ### Інструменти розробки
 
-<img src="./readme/technologies/editorconfig.svg" alt="editorconfig" height="32"> <img src="./readme/technologies/npm.svg" alt="npm" height="32"> <img src="./readme/technologies/visualstudiocode.svg" alt="visualstudiocode" height="32"> <img src="./readme/technologies/git.svg" alt="git" height="32"> <img src="./readme/technologies/nodejs.svg" alt="nodejs" height="32">
+<img src="./readme/technologies/editorconfig.svg" alt="editorconfig" height="40px"> <img src="./readme/technologies/npm.svg" alt="npm" height="40px"> <img src="./readme/technologies/visualstudiocode.svg" alt="visualstudiocode" height="40px"> <img src="./readme/technologies/git.svg" alt="git" height="40px"> <img src="./readme/technologies/nodejs.svg" alt="nodejs" height="40px">
 
 ### Фронтенд
 
-<img src="./readme/technologies/html5.svg" alt="html5" height="32"> <img src="./readme/technologies/sass.svg" alt="sass" height="32"> <img src="./readme/technologies/javascript.svg" alt="javascript" height="32"> <img src="./readme/technologies/babel.svg" alt="babel" height="32"> <img src="./readme/technologies/postcss.svg" alt="postcss" height="32"> <img src="./readme/technologies/i18next.svg" alt="i18next" height="32">
+<img src="./readme/technologies/html5.svg" alt="html5" height="40px"> <img src="./readme/technologies/sass.svg" alt="sass" height="40px"> <img src="./readme/technologies/javascript.svg" alt="javascript" height="40px"> <img src="./readme/technologies/babel.svg" alt="babel" height="40px"> <img src="./readme/technologies/postcss.svg" alt="postcss" height="40px"> <img src="./readme/technologies/i18next.svg" alt="i18next" height="40px">
 
 ### Інше
 
-<img src="./readme/technologies/adobeillustrator.svg" alt="adobeillustrator" height="32"> <img src="./readme/technologies/adobephotoshop.svg" alt="adobephotoshop" height="32"> <img src="./readme/technologies/brave.svg" alt="brave" height="32"> <img src="./readme/technologies/json.svg" alt="json" height="32">
+<img src="./readme/technologies/adobeillustrator.svg" alt="adobeillustrator" height="40px"> <img src="./readme/technologies/adobephotoshop.svg" alt="adobephotoshop" height="40px"> <img src="./readme/technologies/brave.svg" alt="brave" height="40px"> <img src="./readme/technologies/json.svg" alt="json" height="40px">
 
 [![wakatime](https://wakatime.com/badge/user/018bc485-44fc-4d1c-b5a4-ee6d8d3d23f5/project/018dc5e6-8837-4d2b-b680-8702f2fb9011.svg)](https://wakatime.com/badge/user/018bc485-44fc-4d1c-b5a4-ee6d8d3d23f5/project/018dc5e6-8837-4d2b-b680-8702f2fb9011)
