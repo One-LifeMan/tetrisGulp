@@ -75,3 +75,5 @@
 ### Інше
 
 <img src="./readme/technologies/adobeillustrator.svg" alt="adobeillustrator" height="32"> <img src="./readme/technologies/adobephotoshop.svg" alt="adobephotoshop" height="32"> <img src="./readme/technologies/brave.svg" alt="brave" height="32"> <img src="./readme/technologies/json.svg" alt="json" height="32">
+
+[![wakatime](https://wakatime.com/badge/user/018bc485-44fc-4d1c-b5a4-ee6d8d3d23f5/project/018dc5e6-8837-4d2b-b680-8702f2fb9011.svg)](https://wakatime.com/badge/user/018bc485-44fc-4d1c-b5a4-ee6d8d3d23f5/project/018dc5e6-8837-4d2b-b680-8702f2fb9011)
