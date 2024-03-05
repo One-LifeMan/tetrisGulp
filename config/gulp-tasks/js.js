@@ -10,18 +10,16 @@ import { webpackConfig } from "./../../webpack.config.js";
 const { development, production } = environments;
 
 const SOURCE = ["./src/js/**/*.js"];
-let destination  = null;
-
-development() ? destination = "dev/js" : destination = "dist/js";
+let destination = development() ? "dev/js" : "dist/js";
 
 function js() {
     return gulp
         .src(SOURCE)
-        .pipe(changed( destination ))
+        .pipe(changed(destination))
         .pipe(plumber(plumberNotify("JavaScript")))
         .pipe(production(babel()))
         .pipe(webpack(webpackConfig))
-        .pipe(gulp.dest( destination ));
+        .pipe(gulp.dest(destination));
 }
 
 export { js };

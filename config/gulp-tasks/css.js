@@ -15,9 +15,7 @@ const sass = gulpSass(dartSass);
 const { development, production } = environments;
 
 const SOURCE = "./src/scss/**/*.scss";
-let destination = null;
-
-development() ? (destination = "dev/css") : (destination = "dist/css");
+let destination = development() ? "dev/css" : "dist/css";
 
 function css() {
     return gulp

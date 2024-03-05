@@ -7,24 +7,22 @@ import environments from "gulp-environments";
 const { development, production } = environments;
 
 const SOURCE = ["./src/fonts/**/*.ttf"];
-let destination  = null;
 
-development() ? destination = "dev/fonts" : destination = "dist/fonts";
+let destination = development() ? "dev/fonts" : "dist/fonts";
 
-function fonts () {
+function fonts() {
     return gulp
-        .src( SOURCE )
-        .pipe(changed( destination ))
+        .src(SOURCE)
+        .pipe(changed(destination))
         .pipe(ttf2woff())
-        .pipe(gulp.dest( destination ))
+        .pipe(gulp.dest(destination))
 
-        .pipe(gulp.src( SOURCE ))
+        .pipe(gulp.src(SOURCE))
         .pipe(ttf2woff2())
-        .pipe(gulp.dest( destination ))
+        .pipe(gulp.dest(destination))
 
         .pipe(gulp.src("./src/fonts/**/*"))
-        .pipe(gulp.dest( destination ));
+        .pipe(gulp.dest(destination));
 }
-
 
 export { fonts };

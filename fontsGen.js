@@ -6,8 +6,8 @@ function generateFontFace(fontName, fontPath, fontWeight) {
     return `@font-face {
     font-family: '${fontName}';
     src: url('${fontPath}.woff2') format('woff2'), 
-         url('${fontPath}.woff') format('woff'),
-         url('${fontPath}.ttf') format('truetype');
+        url('${fontPath}.woff') format('woff'),
+        url('${fontPath}.ttf') format('truetype');
     font-weight: ${fontWeight};
     font-style: normal;
 }`;
@@ -76,15 +76,11 @@ fs.readdir(fontsDir, (err, files) => {
     });
 
     // Записуємо згенеровані правила у файл fonts.css
-    fs.writeFile(
-        "./src/scss/base/_fonts.scss",
-        fontFaceRules.join("\n"),
-        (err) => {
-            if (err) {
-                console.error("Failed to write CSS file:", err);
-                return;
-            }
-            console.log("Font CSS file generated successfully!");
-        },
-    );
+    fs.writeFile("./src/scss/base/_fonts.scss", fontFaceRules.join("\n"), (err) => {
+        if (err) {
+            console.error("Failed to write CSS file:", err);
+            return;
+        }
+        console.log("Font CSS file generated successfully!");
+    });
 });

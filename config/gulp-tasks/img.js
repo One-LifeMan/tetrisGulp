@@ -9,9 +9,7 @@ import webp from "gulp-webp";
 const { development, production } = environments;
 
 const SOURCE = ["./src/img/**/*"];
-let destination = null;
-
-development() ? (destination = "dev/img") : (destination = "dist/img");
+let destination = development() ? "dev/img" : "dist/img";
 
 function img() {
     return gulp
